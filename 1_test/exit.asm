@@ -1,8 +1,14 @@
 section .text
     global exit_gracefully
+    global exit_error
 
 exit_gracefully:
-    ; exit
     mov rax, 60
-    xor rdi, rdi
+    mov rdi, 0
     syscall
+
+exit_error:
+    mov rax, 60
+    mov rdi, 1
+    syscall
+    ret

@@ -1,4 +1,5 @@
 extern exit_gracefully
+extern exit_error
 extern read_puzzle_file
 extern print_grid_array
 extern print_int

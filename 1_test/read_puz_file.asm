@@ -34,7 +34,7 @@ read_puzzle_file:
 .parse_loop:
     mov     al, [rsi]
     cmp     al, 0
-    je      .done3
+    je      .done
 
     cmp     al, ','                   ; delimiter
     je      .store_number
@@ -61,7 +61,7 @@ read_puzzle_file:
     inc     rsi
     jmp     .parse_loop
 
-.done3:
+.done:
     ; store last number if we haven't stored it yet
     cmp rcx, 81
     jae .ret              ; don't overrun
