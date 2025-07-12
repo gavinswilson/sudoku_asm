@@ -4,6 +4,8 @@ section .data
     width       db 9
     height      db 9
     lengthArray db 81
+    welcome_msg db "Welcome to the Sudoku Solver!", 10
+    welcome_msg_len equ $ - welcome_msg
 
 section .bss
     numbuf      resb 12
@@ -11,8 +13,16 @@ section .bss
 section .text
     global print_grid_array
     global print_int
+    global print_welcome
 
-
+print_welcome:
+    ; Print welcome message
+    mov rax, 1
+    mov rdi, 1
+    lea rsi, [rel welcome_msg]
+    mov rdx, welcome_msg_len
+    syscall
+    ret
 
 print_grid_array:
     ; rdi = pointer to the grid array
