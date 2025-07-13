@@ -4,6 +4,7 @@ extern read_puzzle_file
 extern print_grid_array
 extern print_int
 extern print_welcome
+extern check_row_complete
 
 section .data
     filename    db "test.txt", 0

@@ -2,7 +2,7 @@
 
 # File names
 OBJDIR     := build
-SRCS       := main.asm exit.asm read_puz_file.asm print.asm
+SRCS       := main.asm exit.asm read_puz_file.asm print.asm check_row_complete.asm
 OBJS       := $(SRCS:%.asm=$(OBJDIR)/%.o)
 TARGET     := sudoku
 
